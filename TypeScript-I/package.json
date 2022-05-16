@@ -1,0 +1,17 @@
+{
+  "name": "typescript-i",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc index.ts",
+    "build:watch": "tsc index.ts --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.33",
+    "typescript": "^4.6.4"
+  }
+}
