@@ -24,42 +24,37 @@ var studentData = [
         id: 3
     },
 ];
-// function sort(arr:[],n:number,i:number,j:number,id:string){
-//     if(i>=j){
-//         return;
-//     }
-//     let index = partition(arr,i,j,id);
-//     sort(arr,n,i,index-1,id);
-//     sort(arr,n,index+1,j,id);
-// }
-// function partition(arr:[],i:number,j:number,id:string){
-//     let pivot=arr[i].id
-//     let left =i;
-//     let right=j;
-//     while(left<right){
-//         while(arr[left].id<=pivot && left<j){
-//             left++;
-//         }
-//          while(arr[right].id>pivot && right>i){
-//             right--;
-//         }
-//         if(left<right){
-//             swap(arr,left,right)
-//         }
-//     }
-//     swap(arr,i,right)
-//     return right;
-// }
-// function swap(arr,i,j){
-//     let temp = arr[i];
-//     arr[i]=arr[j];
-//     arr[j]=temp;
-// }
-// console.log(studentData)
-// sort(studentData,studentData.length,0,3,"age")
-// console.log(studentData)
-function add(arr, filter) {
-    console.log(arr[0].filter);
-    console.log(filter);
+function sort(arr, n, i, j, by) {
+    if (i >= j) {
+        return;
+    }
+    var index = partition(arr, i, j, by);
+    sort(arr, n, i, index - 1, by);
+    sort(arr, n, index + 1, j, by);
 }
-add(studentData, "id");
+function partition(arr, i, j, by) {
+    var pivot = arr[i][by];
+    var left = i;
+    var right = j;
+    while (left < right) {
+        while (arr[left][by] <= pivot && left < j) {
+            left++;
+        }
+        while (arr[right][by] > pivot && right > i) {
+            right--;
+        }
+        if (left < right) {
+            swap(arr, left, right);
+        }
+    }
+    swap(arr, i, right);
+    return right;
+}
+function swap(arr, i, j) {
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+// console.log(studentData)
+sort(studentData, studentData.length, 0, 3, "age");
+console.log(studentData);
