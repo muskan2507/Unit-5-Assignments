@@ -1,3 +1,9 @@
+var teacherData = [
+    { id: 1, name: "Sonu", no_of_students: 10, subject: "Physics" },
+    { id: 4, name: "Kamal", no_of_students: 8, subject: "Maths" },
+    { id: 7, name: "Mohan", no_of_students: 29, subject: "chemistry" },
+    { id: 2, name: "pooja", no_of_students: 3, subject: "maths" }
+];
 var studentData = [
     {
         age: 26,
@@ -56,5 +62,7 @@ function swap(arr, i, j) {
     arr[j] = temp;
 }
 // console.log(studentData)
-sort(studentData, studentData.length, 0, 3, "age");
+sort(studentData, studentData.length, 0, studentData.length - 1, "age");
 console.log(studentData);
+sort(teacherData, teacherData.length, 0, teacherData.length - 1, "id");
+console.log(teacherData);
