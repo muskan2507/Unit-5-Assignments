@@ -1,0 +1,22 @@
+{
+  "formData": [
+    {
+      "id": "1234567",
+      "model": "hp",
+      "make_year": "2020",
+      "op_system": "windows",
+      "height": "14",
+      "width": "16",
+      "price": "700000"
+    },
+    {
+      "id": "1255567",
+      "model": "dell",
+      "make_year": "2018",
+      "op_system": "windows",
+      "height": "12",
+      "width": "16",
+      "price": "120000"
+    }
+  ]
+}

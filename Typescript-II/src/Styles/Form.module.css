@@ -3,6 +3,7 @@
     margin: auto;
     text-align: left;
     box-sizing: border-box;
+   
 }
 .form h4 {
     text-align: center;
@@ -13,10 +14,21 @@ margin-right: 20px;
 margin-bottom: 10px;
 }
 .form input {
-    text-align: right;
   
     margin-bottom: 10px;
 }
 .form input:last-child{
     margin-left: 200px;
+}
+.table {
+    margin: auto;
+    width: 80%;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+.table thead {
+   background-color: blueviolet;
+}
+.table tbody {
+    border: 1px solid red;
 }
