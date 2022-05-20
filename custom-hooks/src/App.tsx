@@ -1,14 +1,16 @@
+import "./App.css";
+import Fetch from "./Components/Fetch";
+import Timer from "./Components/Timer";
 
-import './App.css';
-import useTimeOut from './Hooks/UseTimeOut';
 
 function App() {
   
-  const toShow=useTimeOut(5);
   return (
     <div className="App">
-     {/* -----------------Use Time Out Hook------------------------- */}
-       {toShow? (<h3>Ready</h3>): (<h3>Waiting for Timer...</h3>)}
+      {/* -----------------Use Time Out Hook------------------------- */}
+      <Timer/>
+      {/* -----------------Use Fetch Hook------------------------- */}
+      <Fetch/>
     </div>
   );
 }
