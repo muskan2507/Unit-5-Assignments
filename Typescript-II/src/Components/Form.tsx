@@ -3,7 +3,7 @@ import { useState } from "react"
 import style from "../Styles/Form.module.css"
 const Form = () => {
   
-    const [formData,setFormData]=useState({})
+    const [formData,setFormData]=useState<object>({})
     const handleChange=(e:any)=>{
         let input=e.target.name;
         setFormData({...formData,
