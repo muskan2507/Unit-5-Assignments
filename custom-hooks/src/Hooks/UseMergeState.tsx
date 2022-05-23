@@ -1,15 +1,29 @@
-import React from 'react'
+import { useState } from "react";
 
-const UseMergeState = (initialState:object) => {
-    const [value, setValue] = React.useState(initialState);
-  
-    const mergeState = (newState:any) => {
-      if (typeof newState === 'function') newState = newState(value);
-      setValue({ ...value, ...newState });
-    };
-  
-    return [value, mergeState];
+type User ={
+    username?: string;
+    password?: string | number;
+    email?: string | number;
 }
 
-export default UseMergeState
+export const useMergeState = <User>(initialState = {username, password, email}) => {
+    const [values, setValues] = useState(initialState);
 
+    // onChange
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({ ...values, [event.target.name]: event.target.value });
+    };
+
+
+
+    // onSubmit
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+ 
+    };
+
+
+    // return values
+    return { onChange,onSubmit,values }
+
+}
