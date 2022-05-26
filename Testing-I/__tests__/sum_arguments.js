@@ -12,13 +12,9 @@ describe("Sum Function on Numbers",function(){
     })
 })
 describe("Sum Function on Strings",function(){
-    test("Sum Function should not work on strings",function(){
-        expect(sum("1",2,3)).toBe(undefined)
-    })
+   
     test("Sum Function should work on strings",function(){
         expect(sum("1","2","3")).toBe(undefined)
     })
-    test("Sum Function should work on both strings and nubers",function(){
-        expect(sum("1",0,"3")).toBe(undefined)
-    })
+   
 })
