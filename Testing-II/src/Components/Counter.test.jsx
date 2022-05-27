@@ -1,10 +1,25 @@
-import { render, screen } from "@testing-library/react";
-import App from "../App";
-import Counter from "./Counter";
+import { fireEvent, render,screen } from "@testing-library/react"
+import Counter from "./Counter"
 
-describe("Counter operations",function(){
-    it("should render without any errors",function(){
-        render(<App></App>)
-        expect().toBeInTheDocument();
+describe("Checking Counter",function(){
+    // afterEach(cleanup);
+    it("should not crash",function(){
+        render(<Counter/>);
+        let counter = screen.getByText(0);
+        expect(counter).toBeInTheDocument();
+    })
+    it("should increment by 5",function(){
+        render(<Counter/>);
+        let add = screen.getByText("ADD");
+        let counter = screen.getByTestId("counter");
+        fireEvent.click(add);
+        expect(counter).toHaveTextContent(5)
+    })
+    it("should decrement by 5",function(){
+        render(<Counter/>);
+        let reduce = screen.getByText("REDUCE");
+        let counter = screen.getByTestId("counter");
+        fireEvent.click(reduce);
+        expect(counter).toHaveTextContent(-5)
     })
 })
