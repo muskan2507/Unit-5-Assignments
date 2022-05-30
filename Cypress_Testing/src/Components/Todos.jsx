@@ -18,6 +18,10 @@ const Todos = () => {
       let filterData = data.filter((e)=>id!==e.id);
       setData([...filterData])
     }
+    const handleToggle = (id)=>{
+      data.map((e)=>e.id===id?e.status=!e.status:e);
+      setData([...data])
+    }
     const get = ()=>{
       axios.get("http://localhost:8080/todos").then(({data})=>setData(data))
     }
@@ -35,7 +39,8 @@ const Todos = () => {
       <div className="todo-list">
         {data.map((e)=>{
           return <div className='items' key={e.id}>
-            <h4 className="heading">{e.title}-{e.status?"Done":"Not Done"}</h4>
+          <input className="toggle-btn" type="checkbox" onClick={()=>handleToggle(e.id)} />
+            <h4 style={{color:`${e.status?"green":"black"}`}}  className="heading">{e.title}-{e.status?"Done":"Not Done"}</h4>
             <button className='delete-todo' onClick={()=>handleDelete(e.id)}>Delete</button>
           </div>
         })}
