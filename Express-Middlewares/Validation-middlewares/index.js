@@ -4,7 +4,6 @@ const { validate, ValidationError, Joi } = require('express-validation')
 const app = express();
 
 app.use(express.urlencoded({extended:true}));
-app.use(express.json())
 app.use(bodyParser.json())
 const movieValidation = {
     body: Joi.object({
@@ -26,7 +25,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/post",validate(movieValidation, {}, {}),(req,res)=>{
-    res.send("Data Added");
+    res.send(req.body);
 })
 
 app.use(function(err, req, res, next) {
