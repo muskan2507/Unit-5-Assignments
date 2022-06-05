@@ -8,7 +8,7 @@ app.use(express.json())
 
 morgan.token('body',(req)=> JSON.stringify(req.body));
 
-app.use(morgan('BODY- :body, METHOD- :method, STATUS- :status, RESPONSE-LENGTH- :res[content-length], TIME_TAKEN- :response-time ms, DATE- :date[clf], HTTP_VERSION- HTTP/:http-version '))
+app.use(morgan(' Method :method,Status :status, Content-length :res[content-length], Time :response-time ms, Date :date[clf], HTTP_version HTTP/:http-version, URL_accessed :url '))
 
 
 app.get("/",(req,res)=>{
