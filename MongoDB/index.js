@@ -7,7 +7,11 @@ app.get("/movies",async(req,res)=>{
     const movies = await Movie.find();
     return res.json(movies);
 })
-
+app.get("/movies/:title",async(req,res)=>{
+  const {title}=req.params;
+  const movies=await Movie.find({title:title})
+  return res.json(movies)
+})
 app.post("/movies",(req,res)=>{
     const movie = new Movie({...req.body});
     movie.save((err,movie)=>{
